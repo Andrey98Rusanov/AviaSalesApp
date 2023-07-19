@@ -1,0 +1,20 @@
+.item{
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .2);
+    margin: auto;
+}
+
+.price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.info{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    justify-content: space-between;
+}
