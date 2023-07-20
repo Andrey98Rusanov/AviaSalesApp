@@ -1,13 +1,23 @@
 .item{
     width: 400px;
     padding: 20px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, .2);
+    box-shadow: 0 0px 30px rgba(0, 0, 0, 0.2);
     margin: auto;
+    margin-bottom: 10px;
 }
 
 .price{
     display: flex;
     justify-content: space-between;
+}
+
+.gray{
+    color: gray;
+}
+
+.cost{
+    font-size: 23px;
+    color: #0d9cfb;
 }
 
 .info{
@@ -17,4 +27,9 @@
     margin-bottom: 20px;
     margin-top: 10px;
     justify-content: space-between;
+    justify-items:first baseline;
+}
+
+img {
+    width: 100px;
 }
