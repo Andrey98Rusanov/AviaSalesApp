@@ -1,10 +1,12 @@
-.app{
-    display: flex;
-    width: max-content;
-    margin: auto;
+.app {
+  display: flex;
+  width: max-content;
+  margin: auto;
 }
 
-body{
-    background-color: #F8F9FA;
-    font-family: 'Roboto', sans-serif;
-  }
+body {
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}

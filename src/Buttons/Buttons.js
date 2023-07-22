@@ -22,29 +22,25 @@ function Buttons() {
 
   return (
     <div className="buttons">
-      <span>КОЛИЧЕСТВО ПЕРЕСАДОК</span>
-      <div className="button">
-        <input type="checkbox" checked={all} onClick={() => toggleAll()} />
+      <span className="label">КОЛИЧЕСТВО ПЕРЕСАДОК</span>
+      <div className="button" onClick={() => toggleAll()}>
+        <input type="checkbox" checked={all} />
         <span>Все</span>
       </div>
-      <div className="button">
-        <input
-          type="checkbox"
-          checked={withOut}
-          onClick={() => toggleWithOut()}
-        />
+      <div className="button" onClick={() => toggleWithOut()}>
+        <input type="checkbox" checked={withOut} />
         <span>Без пересадок</span>
       </div>
-      <div className="button">
-        <input type="checkbox" checked={one} onClick={() => toggleOne()} />
+      <div className="button" onClick={() => toggleOne()}>
+        <input type="checkbox" checked={one} />
         <span>1 пересадка</span>
       </div>
-      <div className="button">
-        <input type="checkbox" checked={two} onClick={() => toggleTwo()} />
+      <div className="button" onClick={() => toggleTwo()}>
+        <input type="checkbox" checked={two} />
         <span>2 пересадки</span>
       </div>
-      <div className="button">
-        <input type="checkbox" checked={three} onClick={() => toggleThree()} />
+      <div className="button" onClick={() => toggleThree()}>
+        <input type="checkbox" checked={three} />
         <span>3 пересадки</span>
       </div>
     </div>
