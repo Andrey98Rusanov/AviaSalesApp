@@ -157,7 +157,7 @@ function Items() {
     <>
       {tickets}
       {tickets.length !== 0 ? (
-        <button className="moreTickButton" onChange={() => moreTickClick()}>
+        <button className="moreTickButton" onClick={() => moreTickClick()}>
           Показать еще 5 билетов
         </button>
       ) : null}
