@@ -1,1 +1,1 @@
-#[Ссылка на vercel](https://aviasales-andrey98rusanov.vercel.app/)
+[Ссылка на vercel](https://aviasales-andrey98rusanov.vercel.app/)
