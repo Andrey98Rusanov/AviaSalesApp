@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from "react-redux";
 function Items() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
+
   const stopsValidation = (n) => {
     if (n === 1) return "пересадка";
     else if (n === 2 || n === 3 || n === 4) return "пересадки";
     else return "пересадок";
   };
+
   const dateValidation = (date, duration) => {
     const h =
       new Date(date).getHours() < 10
@@ -31,6 +33,7 @@ function Items() {
     const time2 = [h2, m2].join(":");
     return [time1, time2];
   };
+
   const ticketsFilter = (tickets) => {
     if (tickets.length) {
       const tickClone = tickets.slice(0);
@@ -77,9 +80,11 @@ function Items() {
       return fullTickArr.slice(0, state.tickCount);
     }
   };
+
   const moreTickClick = () => {
     dispatch({ type: "MORE_TICKETS" });
   };
+  
   let tickets = [];
   if (
     (state.all || state.one || state.two || state.three || state.withOut) &&
