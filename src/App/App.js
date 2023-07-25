@@ -4,13 +4,12 @@ import Buttons from "../Buttons/Buttons";
 import {  useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
-import Loader from "../antd_components/spinner";
+import Loader from "../ui_components/spinner";
+import NetWorkAlert from "../ui_components/Alert";
 
 function App() {
   const dispatch = useDispatch();
-  const id = useSelector((state) => state.id);
-  const tickets = useSelector((state) => state.tickets);
-  const isLoad = useSelector((state) => state.load);
+  const {id, load, internet} = useSelector((state) => state)
 
   async function addId() {
     const promiseId = await fetch(
@@ -29,9 +28,9 @@ function App() {
         const tickets = await promiseTickets.json();
         dispatch({ type: "ADD_TICKETS", payload: tickets.tickets });
         if (!tickets.stop) addTickets();
-        if (tickets.stop) dispatch({ type: "IS_LOAD" });
+        if (tickets.stop) dispatch({ type: "IS_LOAD", payload: false });
       } catch (e) {
-        if (!tickets.stop) addTickets();
+        if (e.name!=="TypeError") addTickets()
       }
     }
   }
@@ -41,14 +40,24 @@ function App() {
 
   useEffect(() => {
     addTickets();
-  }, [id]);
+  }, [id, internet]);
+
+  useEffect(() => {
+    window.onoffline = () => {
+      dispatch({type: "INTERNET_OFF"})
+    };
+    window.ononline = () => {
+      dispatch({type: "INTERNET_ON"})
+    };
+  })
 
   return (
     <div className="app">
       <Buttons />
       <div>
         <Filters />
-        {isLoad ? <Loader /> : null}
+        {load && internet ? <Loader /> : null}
+        {internet ? null : <NetWorkAlert/>}
         <Items />
       </div>
     </div>
